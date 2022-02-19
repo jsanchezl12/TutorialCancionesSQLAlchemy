@@ -8,3 +8,5 @@ Para el desarrollo de este tutorial es importante cumplir con los siguientes req
 * Instalar SQLAlchemy 
  
 Con estos requisitos ya es posible comenzar con el tutorial.
+
+---------> Se creo una clase models.py en la carpeta de /src/models porque estaba molestando para poder hacer el ejercicio normal de sql alchemy :) 
