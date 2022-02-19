@@ -12,19 +12,12 @@ class Cancion(Base):
     minutos = Column(Integer)
     segundos = Column(Integer)
     compositor = Column(String)
-    albumes = relationship('Album', secondary='album_cancion')
+    albumes = relationship('Album', secondary='album_cancion', back_populates="canciones")
     interpretes = relationship('Interprete', cascade='all, delete, delete-orphan')
 
 
 class AlbumCancion(Base):
     __tablename__ = 'album_cancion'
 
-    cancion_id = Column(
-        Integer,
-        ForeignKey('cancion.id'),
-        primary_key=True)
-
-    album_id = Column(
-        Integer,
-        ForeignKey('album.id'),
-        primary_key=True)
+    cancion_id = Column(Integer,ForeignKey('cancion.id'),primary_key=True)
+    album_id = Column(Integer,ForeignKey('album.id'),primary_key=True)
